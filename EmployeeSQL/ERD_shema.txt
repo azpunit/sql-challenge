@@ -5,7 +5,7 @@ dept_name VARCHAR
 
 dept_emp
 -
-emp_no INT FK >- dept_manager.emp_no FK -< employees.emp_no FK -< salaries.emp_no
+emp_no INT FK >- dept_manager.emp_no FK >- employees.emp_no FK >- salaries.emp_no
 dept_no VARCHAR FK >- departments.dept_no 
 
 dept_manager
