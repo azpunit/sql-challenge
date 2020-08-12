@@ -24,6 +24,8 @@ FROM departments
     ON employees.emp_no = dept_manager.emp_no
 ORDER BY dept_no
 
+ALTER TABLE manager_of_each_department RENAME emp_no TO mngr_no;
+
 SELECT * FROM manager_of_each_department
 
 CREATE TABLE department_of_each_employee AS
@@ -71,9 +73,10 @@ ORDER BY emp_no
 SELECT * FROM sales_and_development_department_employees
 
 CREATE TABLE count_of_employees_per_last_name AS
-SELECT last_name, COUNT(last_name) AS "number_of_employees"
+SELECT last_name, COUNT(last_name) AS number_of_employees
 FROM employees
-GROUP BY last_name;
+GROUP BY last_name
+ORDER BY number_of_employees DESC
 
 SELECT * FROM count_of_employees_per_last_name
 
